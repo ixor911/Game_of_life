@@ -6,7 +6,7 @@ class Cell:
         self.__alive: bool = alive
 
     def __str__(self):
-        return colored("1", 'dark_grey') if self.__alive else colored("0", 'white')
+        return colored("1", 'white') if self.__alive else colored("0", 'black')
 
     def set_alive(self):
         self.__alive = True
