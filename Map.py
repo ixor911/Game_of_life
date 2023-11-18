@@ -79,3 +79,6 @@ class Map:
 
     def cell(self, x, y) -> Cell:
         return self.map[x][y]
+
+    def set(self, map: list):
+        self.map = map

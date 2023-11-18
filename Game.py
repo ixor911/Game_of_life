@@ -44,28 +44,35 @@ class Game:
         lives = len([item for item in neighbours if item])
         return lives
 
-    def step(self, x: int, y: int):
+    def step(self, x: int, y: int) -> bool:
         try:
             cell = self.map.cell(x, y)
         except Exception as err:
             print(err)
-            return
+            return False
 
         lives = self.neighbours(x, y)
 
         if cell.alive and lives < 2:
-            cell.set_dead()
+            return False
         elif cell.alive and 2 <= lives <= 3:
-            pass
+            return True
         elif cell.alive and 3 < lives:
-            cell.set_dead()
+            return False
         elif not cell.alive and lives == 3:
-            cell.set_alive()
+            return True
 
     def generation(self):
+        new_map = []
         for x in range(0, len(self.map.map)):
+            line = []
             for y in range(0, len(self.map.map[x])):
-                self.step(x, y)
+                if self.step(x, y):
+                    line.append(Cell(True))
+                else:
+                    line.append(Cell(False))
+            new_map.append(line)
+        self.map.set(new_map)
 
     def after_gen(self):
         clear()

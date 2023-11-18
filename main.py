@@ -14,7 +14,7 @@ def game_random(steps: int = None):
 
 
 def game_1(steps: int = None):
-    game = Game("map1.json")
+    game = Game("patterns/map1.json")
     game.map.show()
 
     if steps is None:
@@ -24,7 +24,7 @@ def game_1(steps: int = None):
 
 
 def game_2(steps: int = None):
-    game = Game("map2.json")
+    game = Game("patterns/map2.json")
     game.map.show()
 
     if steps is None:
@@ -34,7 +34,7 @@ def game_2(steps: int = None):
 
 
 def game_3(steps: int = None):
-    game = Game("map3.json")
+    game = Game("patterns/map3.json")
     game.map.show()
 
     if steps is None:
@@ -43,5 +43,6 @@ def game_3(steps: int = None):
         game.start(steps)
 
 
-game_3()
-
+game = Game("patterns/map3.json")
+game.map.show()
+game.start()
