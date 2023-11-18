@@ -43,6 +43,8 @@ def game_3(steps: int = None):
         game.start(steps)
 
 
-game = Game("patterns/map3.json")
-game.map.show()
-game.start()
+# game = Game("patterns/pulsar.json")
+# game.map.show()
+# game.start()
+
+game_random()
