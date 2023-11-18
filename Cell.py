@@ -1,9 +1,12 @@
+from termcolor import colored
+
+
 class Cell:
     def __init__(self, alive: bool = False):
         self.__alive: bool = alive
 
     def __str__(self):
-        return "1" if self.__alive else "0"
+        return colored("1", 'green') if self.__alive else colored("0", 'red')
 
     def set_alive(self):
         self.__alive = True

@@ -43,5 +43,5 @@ def game_3(steps: int = None):
         game.start(steps)
 
 
-game_3(50)
+game_3()
 

@@ -4,6 +4,7 @@ from Map import Map
 import time
 import os
 
+
 clear = lambda: os.system("cls")
 wait_time = 0.2
 
